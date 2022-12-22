@@ -77,7 +77,11 @@ for (let i = 0; i < data.length; i++) {
     const currentI = data[i];
 
     //!monto ogni elemento
-    galleryCode += `  <img src="${currentI.image}"> `;
+    galleryCode += `<img src="${currentI.image}"><div class="text position-absolute bottom-0 start-50 translate-middle text-white">
+    <h2>${currentI.title}</h2>
+    <h5>${currentI.text}</h5>
+    </div>`;
+    gallery.innerHTML = galleryCode;
 };
 gallery.innerHTML = galleryCode;
 
@@ -102,8 +106,18 @@ thumbs.innerHTML = thumbsCode;
 //recupero le immagini
 const images = document.querySelectorAll("#gallery img");
 
+
+
 let currentImage = 0;
 images[currentImage].classList.add("active");
+
+//!thumbs
+const thumb = document.querySelectorAll("#thumbnails img");
+thumb[currentImage].classList.add("active");
+
+//!text
+const imgtext = document.querySelectorAll("#gallery .text");
+imgtext[currentImage].classList.add("active");
 
 //!bottoni
 const next = document.getElementById("next");
@@ -114,6 +128,8 @@ const prev = document.getElementById("prev");
 //!faccio funzionare i bottoni
 next.addEventListener("click", function () {
     images[currentImage].classList.remove("active");
+    thumb[currentImage].classList.remove("active");
+    imgtext[currentImage].classList.remove("active");
 
     currentImage++;
 
@@ -121,9 +137,14 @@ next.addEventListener("click", function () {
     if (currentImage === images.length) currentImage = 0;
 
     images[currentImage].classList.add("active");
+    thumb[currentImage].classList.add("active");
+    imgtext[currentImage].classList.add("active");
 });
 prev.addEventListener("click", function () {
     images[currentImage].classList.remove("active");
+    thumb[currentImage].classList.remove("active");
+    imgtext[currentImage].classList.remove("active");
+
 
     currentImage--;
 
@@ -131,4 +152,8 @@ prev.addEventListener("click", function () {
     if (currentImage < 0) currentImage = images.length - 1;
 
     images[currentImage].classList.add("active");
+    thumb[currentImage].classList.add("active");
+    imgtext[currentImage].classList.add("active");
 });
+
+

@@ -16,6 +16,13 @@
 
 }
 
+#gallery .text {
+    display: none;
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.39);
+    width: 100%;
+}
+
 #gallery img {
     height: 100%;
     width: 100%;
@@ -24,7 +31,7 @@
     display: none;
 }
 
-#gallery img.active {
+#gallery .active {
     display: block;
 }
 
@@ -79,10 +86,13 @@
     object-fit: cover;
     filter: opacity(50%);
     cursor: pointer;
+    transition: filter 0.5s;
+    ;
 
 }
 
-#thumbnails .thumbs img:hover {
+#thumbnails .thumbs img.active {
     filter: opacity(100%);
     border: 1px solid blue;
+    box-shadow: 0 0 5px blue;
 }
