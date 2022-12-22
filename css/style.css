@@ -86,8 +86,14 @@
     object-fit: cover;
     filter: opacity(50%);
     cursor: pointer;
-    transition: filter 0.5s;
-    ;
+    transition: filter 0.5s, transform 1s;
+
+}
+
+#thumbnails .thumbs img:hover {
+    filter: opacity(100%);
+    box-shadow: 0 0 10px rgb(255, 13, 13);
+    transform: scale(1.02);
 
 }
 

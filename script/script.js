@@ -157,3 +157,22 @@ prev.addEventListener("click", function () {
 });
 
 
+//! thumb cliccabili
+for (let i = 0; i < thumb.length; i++) {
+    const currentThumb = thumb[i];
+
+    currentThumb.addEventListener("click", function () {
+        images[currentImage].classList.remove("active");
+        thumb[currentImage].classList.remove("active");
+        imgtext[currentImage].classList.remove("active");
+
+        currentImage = i;
+
+        images[currentImage].classList.add("active");
+        thumb[currentImage].classList.add("active");
+        imgtext[currentImage].classList.add("active");
+
+    });
+
+}
+
