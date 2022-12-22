@@ -116,8 +116,19 @@ next.addEventListener("click", function () {
     images[currentImage].classList.remove("active");
 
     currentImage++;
+
     //far ripartire quando finiscono le foto
     if (currentImage === images.length) currentImage = 0;
+
+    images[currentImage].classList.add("active");
+});
+prev.addEventListener("click", function () {
+    images[currentImage].classList.remove("active");
+
+    currentImage--;
+
+    //far ripartire quando finiscono le foto
+    if (currentImage < 0) currentImage = images.length - 1;
 
     images[currentImage].classList.add("active");
 });
