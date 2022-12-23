@@ -57,11 +57,6 @@ const data = [
 ];
 
 
-//! FUNZIONE
-const changeImg = (target) => {
-
-}
-
 //! START
 const gallery = document.getElementById("gallery");
 const thumbs = document.getElementById("thumbnails");
